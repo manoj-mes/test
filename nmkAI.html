@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Top 20 Essentials for Human Life</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      margin:0; background:#0f172a; color:#e5e7eb;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial;
+    }
+    .wrap { max-width:960px; margin:0 auto; padding:20px; }
+    h1 { font-size:24px; margin-bottom:20px; text-align:center; }
+    .grid {
+      display:grid; gap:16px;
+      grid-template-columns: repeat(auto-fill,minmax(140px,1fr));
+    }
+    button {
+      padding:12px; border-radius:10px; border:0;
+      background:#22c55e; color:#0f172a; font-weight:700;
+      cursor:pointer; box-shadow:0 2px 6px rgba(0,0,0,0.3);
+    }
+    button:hover { background:#16a34a; }
+    .modal {
+      position:fixed; top:0; left:0; width:100%; height:100%;
+      background:rgba(0,0,0,0.7); display:none; align-items:center; justify-content:center;
+      z-index:9999;
+    }
+    .modal-content {
+      background:#111827; border-radius:12px; padding:12px;
+      width:90%; max-width:800px; height:80vh; display:flex; flex-direction:column;
+    }
+    .modal-header {
+      display:flex; justify-content:space-between; align-items:center;
+      margin-bottom:8px;
+    }
+    .modal-header h2 { font-size:16px; margin:0; }
+    .close-btn {
+      background:#ef4444; color:white; border:0; border-radius:6px;
+      padding:6px 10px; cursor:pointer;
+    }
+    iframe {
+      flex:1; border:0; border-radius:8px;
+    }
+    .footer {
+      text-align:center; font-size:12px; color:#9ca3af; margin-top:20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>🌍 Top 20 Essentials for Human Life</h1>
+    <div class="grid">
+      <button onclick="openModal('Health','https://www.webmd.com')">Health</button>
+      <button onclick="openModal('Jobs','https://www.indgovtjobs.in')">Jobs</button>
+      <button onclick="openModal('Education','https://www.khanacademy.org')">Education</button>
+      <button onclick="openModal('News','https://www.bbc.com/news')">News</button>
+      <button onclick="openModal('Shopping','https://www.amazon.in')">Shopping</button>
+      <button onclick="openModal('Finance','https://www.investopedia.com')">Finance</button>
+      <button onclick="openModal('Food & Recipes','https://www.allrecipes.com')">Food & Recipes</button>
+      <button onclick="openModal('Mental Wellness','https://www.headspace.com')">Mental Wellness</button>
+      <button onclick="openModal('Fitness','https://www.fitnessblender.com')">Fitness</button>
+      <button onclick="openModal('Travel','https://www.lonelyplanet.com')">Travel</button>
+      <button onclick="openModal('Beauty','https://www.nykaa.com')">Beauty</button>
+      <button onclick="openModal('Mehandi','https://mehendibazar.com')">Mehandi</button>
+      <button onclick="openModal('Rangoli','https://www.pinterest.com/chhavicreates/mehendi-rangoli-designs/')">Rangoli</button>
+      <button onclick="openModal('Dressing','https://www.amazon.in/b?node=1968024031')">Dressing</button>
+      <button onclick="openModal('Government Services','https://www.india.gov.in')">Govt Services</button>
+      <button onclick="openModal('Emergency Help','https://www.nhp.gov.in')">Emergency Help</button>
+      <button onclick="openModal('Parenting','https://www.babycenter.in')">Parenting</button>
+      <button onclick="openModal('Self-Care','https://www.mindbodygreen.com')">Self-Care</button>
+      <button onclick="openModal('Nutrition','https://www.eatright.org')">Nutrition</button>
+      <button onclick="openModal('Spirituality','https://www.artofliving.org')">Spirituality</button>
+    </div>
+    <div class="footer">Made for everyone. Secure, simple, and useful. © 2025</div>
+  </div>
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="modalTitle">Loading…</h2>
+        <button class="close-btn" onclick="closeModal()">Close</button>
+      </div>
+      <iframe id="modalFrame" src=""></iframe>
+    </div>
+  </div>
+
+  <script>
+    function openModal(title, url) {
+      document.getElementById('modalTitle').textContent = title;
+      document.getElementById('modalFrame').src = url;
+      document.getElementById('modal').style.display = 'flex';
+    }
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none';
+      document.getElementById('modalFrame').src = '';
+    }
+  </script>
+</body>
+</html>
